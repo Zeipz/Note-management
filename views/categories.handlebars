@@ -1,0 +1,22 @@
+<h1>Categorías</h1>
+
+<form action="/add-category" method="POST" class="mb-4">
+  <div class="input-group">
+    <input type="text" class="form-control" name="name" placeholder="Nueva categoría" required>
+    <button class="btn btn-primary" type="submit">Agregar</button>
+  </div>
+</form>
+
+{{#if categories.length}}
+  <ul class="list-group">
+    {{#each categories}}
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        {{this.name}}
+        <span class="badge bg-primary rounded-pill">{{this.count}}</span>
+        <a href="/delete-category/{{this.id}}" class="btn btn-danger btn-sm" onclick="return confirm('¿Estás seguro de eliminar esta categoría?')">Eliminar</a>
+      </li>
+    {{/each}}
+  </ul>
+{{else}}
+  <p>No hay categorías disponibles.</p>
+{{/if}}

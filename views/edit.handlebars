@@ -1,0 +1,25 @@
+<h1>Editar Nota</h1>
+<form action="/edit/{{note.id}}" method="POST">
+    <div class="mb-3">
+        <label for="title" class="form-label">Título</label>
+        <input type="text" class="form-control" id="title" name="title" value="{{note.title}}" required>
+    </div>
+    <div class="mb-3">
+        <label for="content" class="form-label">Contenido</label>
+        <textarea class="form-control" id="content" name="content" rows="3" required>{{note.content}}</textarea>
+    </div>
+    <div class="mb-3">
+        <label for="category_id" class="form-label">Categoría</label>
+        <select class="form-select" id="category_id" name="category_id">
+            <option value="">Sin categoría</option>
+            {{#each categories}}
+                <option value="{{this.id}}" {{#if (eq ../note.CategoryId this.id)}}selected{{/if}}>{{this.name}}</option>
+            {{/each}}
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="tags" class="form-label">Etiquetas (separadas por comas)</label>
+        <input type="text" class="form-control" id="tags" name="tags" value="{{#each note.Tags}}{{this.name}}{{#unless @last}}, {{/unless}}{{/each}}">
+    </div>
+    <button type="submit" class="btn btn-primary">Guardar cambios</button>
+</form>

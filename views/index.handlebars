@@ -1,0 +1,26 @@
+<h1>Mis Notas</h1>
+
+<div class="mb-3">
+    <button id="showAllButton" class="btn btn-outline-primary me-2">Todas</button>
+    {{#each categories}}
+        <button class="btn btn-outline-secondary me-2 category-filter" data-category="{{this.name}}">{{this.name}}</button>
+    {{/each}}
+</div>
+
+<div id="notesContainer" class="row">
+    {{#each notes}}
+        <div class="col-md-4 mb-4 note-card" data-category="{{this.Category.name}}">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{this.title}}</h5>
+                    <p class="card-text">{{this.content}}</p>
+                    <p>Categoría: {{this.Category.name}}</p>
+                    <a href="/edit/{{this.id}}" class="btn btn-primary btn-sm">Editar</a>
+                    <a href="/delete/{{this.id}}" class="btn btn-danger btn-sm" onclick="return confirm('¿Estás seguro de eliminar esta nota?')">Eliminar</a>
+                </div>
+            </div>
+        </div>
+    {{/each}}
+</div>
+
+<a href="/add" class="btn btn-success">Agregar Nueva Nota</a>

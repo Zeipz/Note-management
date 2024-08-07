@@ -1,0 +1,188 @@
+:root {
+    --primary-color: #03101c;
+    --secondary-color: #6c757d;
+    --background-color: #f8f9fa;
+    --text-color: #343a40;
+    --card-background-color: #ffffff;
+    --button-primary-bg-color: #03101c;
+    --button-danger-bg-color: #dc3545;
+    --button-primary-border-color: #03101c;
+    --button-danger-border-color: #dc3545;
+    --button-active-bg-color: #03101c;
+
+    /* Modo oscuro */
+    --dark-background-color: #121212;
+    --dark-card-background-color: #1e1e1e;
+    --dark-text-color: #ffffff;
+    --dark-button-primary-bg-color: #136832;
+    --dark-button-danger-bg-color: #ff4500;
+    --dark-button-primary-border-color: #136832;
+    --dark-button-danger-border-color: #ff4500;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: 'Roboto', sans-serif;
+    padding-top: 60px;
+}
+
+.navbar {
+    background-color: var(--primary-color) !important;
+}
+
+.card {
+    background-color: var(--card-background-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
+    transition: all 0.3s ease;
+    border-radius: 8px;
+}
+
+.card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, .15);
+    transform: translateY(-5px);
+}
+
+.btn-primary {
+    background-color: var(--button-primary-bg-color);
+    border-color: var(--button-primary-border-color);
+}
+
+.btn-danger {
+    background-color: var(--button-danger-bg-color);
+    border-color: var(--button-danger-border-color);
+}
+
+.btn-outline-primary {
+    color: var(--button-primary-bg-color);
+    border-color: var(--button-primary-border-color);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--button-primary-bg-color);
+    color: white;
+}
+
+.btn-outline-secondary {
+    color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+.btn-outline-secondary:hover {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.btn-active {
+    background-color: var(--button-active-bg-color);
+    border-color: var(--button-active-bg-color);
+    color: white;
+}
+
+.tag {
+    background-color: #e9ecef;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.8em;
+    margin-right: 5px;
+}
+
+/* Modo oscuro */
+body.dark-mode {
+    background-color: var(--dark-background-color);
+    color: var(--dark-text-color);
+}
+
+body.dark-mode .navbar {
+    background-color: var(--dark-background-color) !important;
+}
+
+body.dark-mode .card {
+    background-color: var(--dark-card-background-color);
+}
+
+body.dark-mode .btn-primary {
+    background-color: var(--dark-button-primary-bg-color);
+    border-color: var(--dark-button-primary-border-color);
+}
+
+body.dark-mode .btn-danger {
+    background-color: var(--dark-button-danger-bg-color);
+    border-color: var(--dark-button-danger-border-color);
+}
+
+body.dark-mode .btn-outline-primary {
+    color: var(--dark-button-primary-bg-color);
+    border-color: var(--dark-button-primary-border-color);
+}
+
+body.dark-mode .btn-outline-primary:hover {
+    background-color: var(--dark-button-primary-bg-color);
+    color: white;
+}
+
+body.dark-mode .btn-outline-secondary {
+    color: var(--dark-secondary-color);
+    border-color: var(--dark-secondary-color);
+}
+
+body.dark-mode .btn-outline-secondary:hover {
+    background-color: var(--dark-secondary-color);
+    color: white;
+}
+
+/* Nuevas reglas */
+
+.btn-outline-primary.active,
+.btn-outline-secondary.active {
+    background-color: var(--button-active-bg-color);
+    color: white;
+}
+
+.note-card {
+    transition: all 0.3s ease;
+}
+
+body.dark-mode .btn-outline-primary.active,
+body.dark-mode .btn-outline-secondary.active {
+    background-color: var(--dark-button-primary-bg-color);
+    color: var(--dark-text-color);
+}
+
+#showAllButton {
+    background-color: var(--button-primary-bg-color);
+    color: white;
+}
+
+#showAllButton:hover {
+    background-color: var(--button-primary-bg-color);
+    opacity: 0.9;
+}
+
+body.dark-mode #showAllButton {
+    background-color: var(--dark-button-primary-bg-color);
+    color: var(--dark-text-color);
+}
+
+body.dark-mode #showAllButton:hover {
+    opacity: 0.9;
+}
+
+.category-filter {
+    margin-bottom: 5px;
+}
+
+#notesContainer {
+    margin-top: 20px;
+}
+
+#notesContainer > p {
+    text-align: center;
+    margin-top: 20px;
+    font-style: italic;
+    color: var(--secondary-color);
+}
+
+body.dark-mode #notesContainer > p {
+    color: var(--dark-text-color);
+}
